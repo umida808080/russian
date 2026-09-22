@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учим русский язык</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ЭКРАН 1: ГЛАВНОЕ МЕНЮ (КАТАЛОГ ТЕМ) -->
+        <div id="catalog-screen" class="screen">
+            <h1 class="main-title">Русский язык для детей 🌟</h1>
+            <p class="main-subtitle">Выберите тему уроков / Mavzuni tanlang</p>
+            <!-- Сетка из плиток-тем сформируется здесь автоматически -->
+            <div id="catalog-grid" class="grid-container"></div>
+        </div>
+
+        <!-- ЭКРАН 2: ВЫБОР РЕЖИМА ИГРЫ ВНУТРИ ТЕМЫ -->
+        <div id="mode-screen" class="screen hidden">
+            <h1 id="selected-theme-title" class="theme-title">Тема</h1>
+            <button id="mode-dictionary" class="menu-btn">📖 Словарь — Lugat</button>
+            <button id="mode-quiz" class="menu-btn">🎯 Найди картинку — Rasmni top</button>
+            <button id="mode-speak" class="menu-btn">🎤 Скажи — Аyt</button>
+            <button class="btn btn-home btn-back-catalog">↩️ К списку тем</button>
+        </div>
+
+        <!-- ЭКРАН 3: РЕЖИМ «СЛОВАРЬ» -->
+        <div id="screen-dictionary" class="screen hidden">
+            <h2>📖 Словарь — Lugat</h2>
+            <div class="card">
+                <img id="dict-img" src="" alt="Картинка">
+                <h3 id="dict-text">Слово</h3>
+            </div>
+            <div class="controls">
+                <button id="dict-play" class="btn btn-audio">Повторить звук 🔊</button>
+                <button id="dict-next" class="btn btn-next">Дальше ➡️</button>
+            </div>
+            <button class="btn btn-home btn-back-modes">↩️ Меню темы</button>
+        </div>
+
+        <!-- ЭКРАН 4: РЕЖИМ «НАЙДИ КАРТИНКУ» -->
+        <div id="screen-quiz" class="screen hidden">
+            <h2>🎯 Найди картинку — Rasmni top</h2>
+            <div class="quiz-instruction">
+                <button id="quiz-repeat-audio" class="btn btn-audio-large">Послушай слово 🔊</button>
+                <p id="quiz-feedback">Послушай аудио и выбери правильную картинку</p>
+            </div>
+            <div class="quiz-grid">
+                <div class="quiz-option" data-index="0"><img src="" id="opt-0"></div>
+                <div class="quiz-option" data-index="1"><img src="" id="opt-1"></div>
+                <div class="quiz-option" data-index="2"><img src="" id="opt-2"></div>
+                <div class="quiz-option" data-index="3"><img src="" id="opt-3"></div>
+            </div>
+            <button id="quiz-next" class="btn btn-next hidden">Следующее слово ➡️</button>
+            <button class="btn btn-home btn-back-modes">↩️ Меню темы</button>
+        </div>
+
+        <!-- ЭКРАН 5: РЕЖИМ «СКАЖИ» -->
+        <div id="screen-speak" class="screen hidden">
+            <h2>🎤 Скажи — Аyt</h2>
+            <div class="card">
+                <img id="speak-img" src="" alt="Картинка">
+                <h3 id="speak-text" class="hidden">Слово</h3>
+            </div>
+            <div id="speak-result-box">
+                <p id="speak-result-text">Нажмите «Говорить» и произнесите слово.</p>
+            </div>
+            <div class="controls">
+                <button id="speak-mic" class="btn btn-mic">Говорить 🎤</button>
+                <button id="speak-next" class="btn btn-next hidden">Следующее слово ➡️</button>
+            </div>
+            <button class="btn btn-home btn-back-modes">↩️ Меню темы</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
